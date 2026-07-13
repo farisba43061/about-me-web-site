@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Faris Bahussain</title>
+  <style>
+    /* ============================================
+       ROOT STYLES - Global theme and defaults
+       ============================================ */
+    :root {
+      color-scheme: dark;
+      font-family: Inter, Arial, sans-serif;
+      background: radial-gradient(circle at top, #081720 0%, #091925 35%, #08141e 100%);
+      color: #e2e8f0;
+    }
+
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    /* ============================================
+       HEADER SECTION - Profile photo and intro
+       ============================================ */
+    header {
+      padding: 32px 24px 16px;
+      text-align: center;
+    }
+
+    /* Container for profile photo and text */
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 200px;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    /* Profile picture - circular with border and shadow */
+    .avatar {
+      display: block;
+      width: 200px;
+      height: 200px;
+      border-radius: 999px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Tablet and up: arrange profile and text side-by-side */
+    @media (min-width: 768px) {
+      .header-inner { flex-direction: row; }
+    }
+
+    /* Main page title */
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 3.5vw, 3.4rem);
+      letter-spacing: -0.04em;
+      color: #f8fafc;
+    }
+
+    /* Header paragraph text */
+    header p {
+      margin: 16px auto 0;
+      max-width: 720px;
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    /* ============================================
+       MAIN CONTENT - Sections and cards layout
+       ============================================ */
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto 48px;
+      padding: 0 0 16px;
+    }
+
+    /* Content cards with dark background and border */
+    .card {
+      background: #111b28;
+      border-radius: 24px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      padding: 32px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+    }
+
+    /* Section heading with gradient line accent */
+    .section-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+
+    /* Gradient line before section title */
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 38px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #4f46e5, #0ea5e9);
+    }
+
+    /* Intro section - responsive grid layout */
+    .intro {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Text styling for intro paragraphs and lists */
+    .intro p,
+    .intro ul {
+      margin: 0;
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    /* Custom list styling */
+    .intro ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    /* List item cards */
+    .intro li {
+      padding: 16px;
+      border-radius: 18px;
+      background: #122232;
+      border: 1px solid rgba(56, 189, 248, 0.16);
+    }
+
+    /* Grid utilities */
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    /* Two-column grid layout */
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Highlight text with cyan color */
+    .highlight {
+      color: #7dd3fc;
+      font-weight: 700;
+    }
+
+    /* Projects section container */
+    .project-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    /* Individual project card */
+    .project-item {
+      padding: 20px;
+      border-radius: 18px;
+      background: #131f2f;
+      border: 1px solid rgba(56, 189, 248, 0.12);
+    }
+
+    /* Project title */
+    .project-item h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      color: #f8fafc;
+    }
+
+    /* Project description */
+    .project-item p {
+      margin: 0;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       FOOTER - Page bottom
+       ============================================ */
+    footer {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      padding: 24px 0 16px;
+    }
+
+    /* Tablet and up: wider intro section on left, list on right */
+    @media (min-width: 768px) {
+      .intro {
+        grid-template-columns: 1.3fr 0.9fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER: Profile photo and introduction -->
+  <header>
+    <div class="header-inner">
+      <img src="./profile.svg" alt="Faris Bahussain — profile photo" class="avatar" width="200" height="200">
+      <div>
+        <h1>About Me</h1>
+        <p>
+          I am <strong class="highlight">Faris Bahussain</strong>, a Mechanical Engineering student with a passion for robotics, intelligent systems, and innovative product design.
+          My interests lie at the intersection of mechanical engineering and artificial intelligence, where I enjoy transforming creative ideas into practical, real-world solutions.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: Multiple sections with cards -->
+  <main>
+    <!-- SECTION 1: Who I Am - biography and key skills -->
+    <section class="card intro">
+      <div>
+        <div class="section-title">Who I Am</div>
+        <p>
+          I am a Mechanical Engineering student passionate about robotics, intelligent systems, and innovative product design.
+          I enjoy transforming creative ideas into practical solutions, and I have experience in CAD design, 3D printing, rapid prototyping, and mechanical system development.
+          I have worked on projects that combine mechanical motion, actuator selection, and system-level integration, and I am constantly looking for ways to make designs more efficient, reliable, and user-friendly.
+          Whether I am improving a mechanical assembly or learning new software tools, I aim to connect strong engineering fundamentals with creative problem-solving.
+          I tackle complex engineering challenges with a balance of creativity, precision, and analytical thinking, and I believe continuous learning and innovation are the foundation of a successful engineering career.
+        </p>
+      </div>
+      <ul>
+        <li><strong>Robotics:</strong> Designing motion systems, selecting actuators, and optimizing mechanical structures.</li>
+        <li><strong>AI & Automation:</strong> Applying intelligent control, sensors, and embedded software to make machines more capable.</li>
+        <li><strong>3D Printing:</strong> Rapid prototyping, material testing, and printer upgrades for improved performance.</li>
+        <li><strong>CAD & Analysis:</strong> SolidWorks and Onshape modeling, simulation, and manufacturing preparation.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 2: Key Projects - featured project showcase -->
+    <section class="card">
+      <div class="section-title">Key Projects</div>
+      <div class="project-list">
+        <article class="project-item">
+          <h3>Robotic Dog Platform</h3>
+          <p>
+            Building a quadruped robot from concept to prototype using SolidWorks, servo selection, 3D printed parts, and mechanical motion planning. The goal is to add AI perception and autonomous behavior.
+          </p>
+        </article>
+        <article class="project-item">
+          <h3>3D Printer Performance Upgrade</h3>
+          <p>
+            Improving print quality and reliability by upgrading hardware, calibrating slicer settings, and experimenting with new filament materials to achieve stronger, more accurate prototypes.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Two-column layout - strengths and approach -->
+    <section class="card grid grid-2">
+      <div>
+        <div class="section-title">Technical Strengths</div>
+        <p>
+          I combine mechanical engineering fundamentals with modern tools to develop robust systems. My technical strengths include CAD design, rapid prototyping, mechanical optimization, and an emerging focus on AI-enabled robotics.
+        </p>
+      </div>
+      <div>
+        <div class="section-title">My Approach</div>
+        <ul>
+          <li>Design with function, efficiency, and manufacturability in mind.</li>
+          <li>Prototype quickly and iterate based on real-world testing.</li>
+          <li>Use software tools to validate performance and reduce risk.</li>
+          <li>Stay curious, collaborate, and keep learning.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER: Page footer -->
+</body>
+</html>
